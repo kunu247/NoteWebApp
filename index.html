@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note for उंच व्यक्ती</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yatra+One&display=swap" rel="stylesheet" />
+    <style>
+      .yatra-one-regular {
+        font-family: "Yatra One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .handlee-regular {
+        font-family: "Handlee", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .roboto-thin {
+        font-family: "Roboto", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+
+      .roboto-thin-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+      }
+
+      .roboto-light {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      .roboto-light-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      .roboto-regular {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .roboto-regular-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      .roboto-medium {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      .roboto-medium-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      .roboto-bold {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .roboto-bold-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .roboto-black {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+
+      .roboto-black-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+      }
+
+      body {
+        margin: 40px 0 0;
+        background: #91d1d3;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .paper {
+        position: relative;
+        width: 90%;
+        max-width: 800px;
+        min-width: 400px;
+        height: 480px;
+        margin: 0 auto;
+        background: #fafafa;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+      .paper:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+        background-size: 30px 30px;
+        border-right: 3px solid #d44147;
+        box-sizing: border-box;
+      }
+      .paper-content {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        bottom: 30px;
+        left: 60px;
+        background: linear-gradient(
+          transparent,
+          transparent 28px,
+          #47c1c5 28px
+        );
+        background-size: 30px 30px;
+      }
+
+      .paper-content textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        line-height: 30px;
+        padding: 0 10px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: rgb(71, 15, 175);
+        font-family: "Yatra One", "Handlee", "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        box-sizing: border-box;
+        z-index: 1;
+      }
+
+      footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 400;
+        color: rgb(45, 42, 87);
+      }
+      footer a {
+        font-weight: 800;
+        color: rgba(243, 20, 57, 0.8);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      const container = document.getElementById("container");
+      const nameTxt = `उंच व्यक्ती`;
+      const txtString = `काय उंच व्यक्ती कश्या आहात. फार आठवण येतेय राव तुमची.`;
+      const txtDev = `Developer`;
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        try {
+          const paper = document.createElement("div");
+          paper.classList.add("paper");
+
+          const paperContent = document.createElement("div");
+          paperContent.classList.add("paper-content");
+
+          const txtBox = document.createElement("textarea");
+          txtBox.id = "txtBox";
+          txtBox.autofocus = true;
+          txtBox.innerHTML =
+            `Dear <b>${nameTxt}<b>,\n\n\t${txtString}
+            \n\n\n\nYour Friend,\n${txtDev}`;
+
+          container.appendChild(paper);
+          paper.appendChild(paperContent);
+          paperContent.appendChild(txtBox);
+
+          const footer = document.createElement("footer");
+          footer.innerHTML = `Made By <a href="https://www.instagram.com/rootk.unu247?igsh=MW9tNWNxcmNuaGdncw==" target="_blank">[ IG | @rootk.unu247 ]</a>`;
+          document.body.appendChild(footer);
+        } catch (error) {
+          alert(
+            `${new Date().toLocaleString()} | Error: ${error.message}`
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
