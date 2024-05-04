@@ -172,8 +172,18 @@
     <div id="container"></div>
     <script>
       const container = document.getElementById("container");
-      const nameTxt = `उंच व्यक्ती`;
-      const txtString = `काय उंच व्यक्ती कश्या आहात. फार आठवण येतेय राव तुमची.`;
+      // const nameTxt = `उंच व्यक्ती`;
+      const nameTxt = `100RBH`;
+      const txtString =
+      [
+        `काय उंच व्यक्ती कश्या आहात. फार आठवण येतेय राव तुमची.`,
+        `भरलेला खिसा माणसाला जग दाखवतो आणि रिकामा खिसा जगातील माणसं दाखवतो.`,
+        `ज्याला शंभर किलो धान्याचं पोतं उचलता येते, त्याला ते विकत घेता येत नाही आणि ज्याला विकत घेता येते, त्याला उचलता येत नाही. विचित्र आहे, पण सत्य आहे.`,
+        `समजवण्यापेक्षा समजून घेण्यामध्ये खरी परीक्षा असते. कारण समजवण्यासाठी अनुभवाचा कस लागतो, तर समजून घेण्यासाठी मनाचा मोठेपणा लागतो.`,
+        `काही मिळाले तर नशिबाचा खेळ आहे, पण प्रयत्न इतके करा की परमेश्वराला देणे भाग पडेल.`,
+        `जगा इतके की आयुष्य कमी पडेल. हसा इतके की आनंद कमी पडेल.`,
+        `खरं तर सगळे कागद सारखेच. फक्त त्याला अहंकार चिकटला की त्याचे सर्टीफिकेट होते.`
+      ];
       const txtDev = `Developer`;
 
       document.addEventListener("DOMContentLoaded", (e) => {
@@ -188,7 +198,7 @@
           txtBox.id = "txtBox";
           txtBox.autofocus = true;
           txtBox.innerHTML =
-            `Dear ${nameTxt},\n\n\t${txtString}
+            `Dear ${nameTxt},\n\n\t${txtString[1]}
             \n\n\n\nYour Friend,\n${txtDev}`;
 
           container.appendChild(paper);
